@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expression Tree Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expression Tree Calculator</h1>
+        <div class="calculator">
+            <div class="input-section">
+                <label for="expression">Enter Mathematical Expression:</label>
+                <input type="text" id="expression" placeholder="e.g., 3 + 4 * 2 / (1 - 5)^2">
+                <button id="calculate-btn">Calculate</button>
+            </div>
+            <div class="result-section">
+                <h2>Result</h2>
+                <div id="result"></div>
+                <div id="postfix"></div>
+            </div>
+            <div class="info-section">
+                <h3>How it works:</h3>
+                <ul>
+                    <li>Enter a mathematical expression using numbers and operators (+, -, *, /, ^)</li>
+                    <li>Supports parentheses for grouping</li>
+                    <li>Follows standard order of operations</li>
+                    <li>Expression is parsed into a tree structure and evaluated</li>
+                    <li>Postfix notation is generated using the Shunting Yard algorithm</li>
+                    <li>Infix notation is reconstructed from postfix for verification</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
