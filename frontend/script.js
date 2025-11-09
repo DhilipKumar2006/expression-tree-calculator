@@ -4,10 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultDiv = document.getElementById('result');
     const postfixDiv = document.getElementById('postfix');
     
-    // API endpoint - will use docker backend when deployed
-    const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-        ? 'http://localhost:5000' 
-        : '/api';
+    // API endpoint - using Render backend
+    const API_BASE_URL = 'https://backend-56pg.onrender.com';
     
     calculateBtn.addEventListener('click', calculateExpression);
     expressionInput.addEventListener('keypress', function(e) {
@@ -45,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } catch (error) {
             console.error('Error:', error);
             if (error instanceof TypeError && error.message.includes('fetch')) {
-                showError('Failed to connect to the server. Please make sure the backend is running at http://localhost:5000');
+                showError('Failed to connect to the server. Please make sure the backend is running at https://backend-56pg.onrender.com');
             } else {
                 showError('An error occurred: ' + error.message);
             }
